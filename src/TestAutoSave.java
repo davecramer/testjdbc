@@ -12,7 +12,6 @@ import java.util.Properties;
 public class TestAutoSave {
   public static void main(String []args){
     Properties connectionProperties =  new Properties();
-    connectionProperties.setProperty(PGProperty.LOGGER_LEVEL.getName(),"OFF");
     connectionProperties.setProperty(PGProperty.USER.getName(),"davec");
     connectionProperties.setProperty(PGProperty.PASSWORD.getName(),"password");
     connectionProperties.setProperty(PGProperty.AUTOSAVE.getName(), "conservative");

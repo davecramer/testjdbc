@@ -14,7 +14,6 @@ public class TestMasterReplica {
   public static void main(String []args){
 
     Properties connectionProperties =  new Properties();
-    connectionProperties.setProperty(PGProperty.LOGGER_LEVEL.getName(),"OFF");
     connectionProperties.setProperty(PGProperty.USER.getName(),"davec");
     connectionProperties.setProperty(PGProperty.PASSWORD.getName(),"password");
 

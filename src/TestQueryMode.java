@@ -14,8 +14,6 @@ public class TestQueryMode {
     Properties properties = new Properties();
     properties.setProperty(PGProperty.USER.getName(),"davec");
     properties.setProperty(PGProperty.PASSWORD.getName(),"password");
-    properties.setProperty(PGProperty.LOGGER_LEVEL.getName(), "TRACE");
-    properties.setProperty(PGProperty.LOGGER_FILE.getName(), "/tmp/jdbc.log");
     DriverManager.setLogWriter(new PrintWriter(System.err));
 
     for (String queryMode:queryModes) {
