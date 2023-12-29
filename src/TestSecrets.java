@@ -10,8 +10,6 @@ public class TestSecrets {
         String secretName = "secretId";
         Region region = Region.of("us-east-1");
 
-//        System.setProperty("", "AKIAQAIUC4DISTEF4ZAP");
- //       System.setProperty("","W/Ud/NCNHzr4ULXPVVS9BKQqApx7uxXonyEoYELc");
         // Create a Secrets Manager client
         SecretsManagerClient client = SecretsManagerClient.builder()
                 .region(region)
