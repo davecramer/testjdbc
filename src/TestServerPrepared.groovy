@@ -12,7 +12,7 @@ import java.sql.Statement
 class TestServerPrepared {
     public static void main(String []args)
     {
-        Connection con = DriverManager.getConnection('jdbc:postgresql://localhost/test','test','')
+        Connection con = DriverManager.getConnection('jdbc:postgresql://localhost:6432/test','test','test')
 
         Sql sql = new Sql(con);
 

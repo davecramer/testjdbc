@@ -9,18 +9,17 @@ public class TestScram {
   public static void main(String[] args) throws SQLException {
     Properties properties = new Properties();
     properties.setProperty("loggerLevel", "TRACE");
-    Connection connection = DriverManager.getConnection(
-        "jdbc:postgresql://localhost/testscram?user=testscram&password=password",
-        properties
-    );
+    try (Connection connection = DriverManager.getConnection(
+            "jdbc:postgresql://localhost/postgres?user=scram&password=password",
+            properties
+    )) {
 
-    try {
-      Statement statement = connection.createStatement();
-      final ResultSet resultSet = statement.executeQuery("select version()");
-      resultSet.next();
-      System.out.println(resultSet.getString(1));
-    }finally {
-      connection.close();
+      try (Statement statement = connection.createStatement()){
+
+        final ResultSet resultSet = statement.executeQuery("select version()");
+        resultSet.next();
+        System.out.println(resultSet.getString(1));
+      }
     }
   }
 }

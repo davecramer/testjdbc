@@ -29,19 +29,30 @@ public class TestURL {
     props.setProperty("password", "");
 
 
-    Connection connection = DriverManager.getConnection(
+
+    Connection connection;
+    /*= DriverManager.getConnection(
             "jdbc:postgresql://pgjdbc.postgres.database.azure.com:5432/postgres?user=postgres@pgjdbc&password=9!pD7Mx2b8");
 
     PGConnection pgConnection =  connection.unwrap(PGConnection.class);
 
     executeSql(connection, "select 1");
+
     connection.close();
-    connection = DriverManager.getConnection("jdbc:postgresql://localhost/","davec", "");
+     */
+    connection = DriverManager.getConnection("jdbc:postgresql://localhost/aaa/bbb", "davec", "password");
     connection.close();
-    connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/","davec", "");
+    connection = DriverManager.getConnection("jdbc:postgresql://localhost/","davec", "password");
     connection.close();
-    connection = DriverManager.getConnection("jdbc:postgresql:davec","davec", "");
+    connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/","davec", "password");
     connection.close();
+    connection = DriverManager.getConnection("jdbc:postgresql:davec","davec", "password");
+    connection.close();
+    connection = DriverManager.getConnection("jdbc:postgresql://","davec", "password");
+    connection.close();
+    connection = DriverManager.getConnection("jdbc:postgresql:/","davec", "password");
+    connection.close();
+
 
   }
   public static void executeSql(Connection con, String sql)
